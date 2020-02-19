@@ -1,25 +1,29 @@
-puts "Informe valor 1"
+resultado = 0
+
+puts "Informe o operador: [ + | - | * | / ]"
+    operador = gets.chomp
+
+puts "Informe valor 1: "
     valor1 = gets
 
-puts "Informe o operador"
-    operador = gets
-
-puts "Informe valor 2"
+puts "Informe valor 2: "
     valor2 = gets
 
-$resultado = 0
+if operador == "+" then
+    resultado = valor1.to_f + valor2.to_f
 
-if operador == "+"
-    $resultado = (valor1.to_i + valor2.to_f.i)
+elsif operador == "-" then
+    resultado = valor1.to_f - valor2.to_f
 
-elsif operador == "-"
-    $resultado = (valor1.to_i - valor2.to_i)
+elsif operador == "*" then
+    resultado = valor1.to_f * valor2.to_f
 
-elsif  operador == "*"
-    $resultado = (valor1.to_i* valor2.to_i)
-
-elsif   operador == "/"
-    $resultado = (valor1.to_i / valor2.to_i)
+elsif operador == "/" then
+    resultado = valor1.to_f / valor2.to_f
+else
+    puts "O operador informado é inválido!"
 end 
 
-puts "resultado: #{valor1} #{operador} #{valor2} = " + $resultado
+puts "==============================================================="
+puts "O resultado da operação é: #{valor1} + #{valor2} = #{resultado}"
+puts "==============================================================="
